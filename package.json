@@ -1,0 +1,22 @@
+{
+  "name": "scrapping-learning-english",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifmael/scrapping-learning-english.git"
+  },
+  "author": "Ismael Rodriguez Moreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifmael/scrapping-learning-english/issues"
+  },
+  "homepage": "https://github.com/ifmael/scrapping-learning-english#readme",
+  "dependencies": {
+    "puppeteer": "^1.20.0"
+  }
+}
