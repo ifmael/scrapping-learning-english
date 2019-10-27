@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ifmael/scrapping-learning-english#readme",
   "dependencies": {
+    "download-file": "^0.1.5",
     "puppeteer": "^1.20.0"
   }
 }
