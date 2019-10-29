@@ -25,7 +25,7 @@ const downloadFile = util.promisify(download);
 
     const tinyArray = listUrlPages.slice(0,4);
 
-    for(let i=0; i < tinyArray.length -1;i++){
+    for(let i=0; i < tinyArray.length ;i++){
       await page.goto(tinyArray[i]);
       const urlMp3Download = await page.evaluate(() => {
         return document.querySelector('.bbcle-download-extension-mp3').href;
@@ -38,20 +38,12 @@ const downloadFile = util.promisify(download);
         directory: "./download",
         filename
       }
-
-      download(urlMp3Download, options, function(err){
-        if (err) throw err
-        listMp3Url.push(urlMp3Download);
-      });
+      console.log(`${i + 1} - Download file: ${urlMp3Download}`);
+      const pathFile = await downloadFile(urlMp3Download, options);
+      if(pathFile) listMp3Url.push(urlMp3Download);
     }
 
-
-
-
-
-    debugger;
-
-    page.close()
+    await page.close()
     await browser.close();
   } catch (error){
     console.error(error);
