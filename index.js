@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer');
-const download  = require('download-file');
+const download = require('download-file');
+const util = require('util');
 
-
+const downloadFile = util.promisify(download);
 
 (async () => {
   try {
