@@ -13,8 +13,10 @@ const downloadFile = util.promisify(download);
 
     const listUrlPages = await page.evaluate(() => {
       const listUrl = [];
+      const featuredATag = document.querySelector('.widget-bbcle-coursecontentlist-featured .img a');
       const ulTag = document.querySelector('.widget ul.threecol');
 
+      listUrl.push(featuredATag.href);
       for (let liTag of ulTag.children) {
         listUrl.push( liTag.querySelector('a').href );
       }
@@ -23,7 +25,7 @@ const downloadFile = util.promisify(download);
     });
 
 
-    const tinyArray = listUrlPages.slice(0,4);
+    const tinyArray = listUrlPages.slice(0,5);
 
     for(let i=0; i < tinyArray.length ;i++){
       await page.goto(tinyArray[i]);
